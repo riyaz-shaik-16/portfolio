@@ -273,9 +273,10 @@ footer{
     }
 
     .buttons button{
-        width: 80px;
+        width: 90px;
         border-radius: 1rem;
         font-weight: 400;
+        font-sizw:16px
     }
 
     .frontend-section,.backend-section,.dsa-section{
