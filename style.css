@@ -272,11 +272,16 @@ footer{
         z-index: -1;
     }
 
+    .buttons{
+        display:flex;
+        flex-wrap:wrap;
+    }
+
     .buttons button{
-        width: 94px;
+        width: 100px;
         border-radius: 1rem;
         font-weight: 400;
-        font-sizw:10px
+        font-sizw:8px
     }
 
     .frontend-section,.backend-section,.dsa-section{
