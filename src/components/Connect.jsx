@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { Mail } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -55,6 +56,7 @@ export default function ContactSection() {
             I’d love to hear from you. Drop a message and I’ll get back to you
             soon.
           </p>
+          <span className="flex gap-2 text-muted-foreground items-center"> <Mail className="w-7 h-7"/> sr308379@gmail.com</span>
         </div>
 
         {/* Right: Form */}
@@ -98,11 +100,12 @@ export default function ContactSection() {
 
           <Button
             type="submit"
-            className="w-full md:w-auto"
-            disabled={isSubmitting}
+            className="w-full md:w-auto cursor-not-allowed"
+            disabled={true}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
+          <p className="italic text-muted-foreground">This doesnt work | Will work on it later</p>
         </form>
       </div>
     </section>

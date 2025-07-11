@@ -2,7 +2,6 @@ import Terminal from "./Terminal";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
-
 const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,18 +17,6 @@ const Hero = () => {
 
   const leftSideVariants = {
     hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const rightSideVariants = {
-    hidden: { opacity: 0, x: 100 },
     visible: {
       opacity: 1,
       x: 0,
@@ -91,41 +78,13 @@ const Hero = () => {
     },
   };
 
-  const secondaryButtonVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.1,
-      },
-    },
-    hover: {
-      scale: 1.05,
-      y: -2,
-      backgroundColor: "rgba(124, 58, 237, 0.1)",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-    tap: {
-      scale: 0.95,
-      transition: {
-        duration: 0.1,
-      },
-    },
-  };
-
   return (
-    <div className="flex">
+    <div className="flex flex-col justify-center items-center sm:flex-row">
       <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="mt-45 flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10 bg-background text-foreground gap-10"
+        className="mt-35  flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10 bg-background text-foreground gap-10"
       >
         {/* Left Side */}
         <motion.div
@@ -140,7 +99,7 @@ const Hero = () => {
             <motion.span
               variants={nameVariants}
               whileHover={{
-                scale: 1.1,
+                scale: 1,
                 color: "#8b5cf6",
                 transition: { duration: 0.3 },
               }}
@@ -177,8 +136,18 @@ const Hero = () => {
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               />
-              <button onClick={j} className="relative z-10 p-3 flex justify-center items-center gap-2"> <Download className="w-7 h-7" />
-  <p className="text-xl">Download Resume</p></button>
+              <div
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/uc?export=download&id=1jtABdr6F1m2v_vsL_raDwWA_ZAb9rzyP",
+                    "_blank"
+                  )
+                }
+                className="relative z-10 px-4 py-3 flex justify-center items-center gap-2 rounded-md text-white transition-all duration-200"
+              >
+                <Download className="w-6 h-6" />
+                <span className="text-lg font-medium">Download Resume</span>
+              </div>
             </motion.a>
           </motion.div>
         </motion.div>

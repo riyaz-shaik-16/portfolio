@@ -20,7 +20,6 @@ const ProjectCard = ({ project, skillsMap }) => {
     tech,
     github,
     demo,
-    year,
     featured,
     status,
   } = project;
@@ -202,7 +201,7 @@ const ProjectCard = ({ project, skillsMap }) => {
                   variants={contentVariants}
                   className="flex items-center gap-4 text-sm text-muted-foreground"
                 >
-                  {year && (
+                  {/* {year && (
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="flex sticky top-0 items-center gap-1"
@@ -210,7 +209,7 @@ const ProjectCard = ({ project, skillsMap }) => {
                       <Calendar className="w-3 h-3" />
                       {year}
                     </motion.div>
-                  )}
+                  )} */}
                   {status && (
                     <motion.div
                       whileHover={{ scale: 1.05 }}

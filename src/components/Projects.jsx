@@ -5,90 +5,63 @@ import ProjectCard from "./ProjectCard";
 const dummyProjects = [
   {
     title: "Recruitment Bot",
-    year: "2024",
-    featured: true,
+    year: "2025",
+    featured: false,
     status: "completed",
     description:
-      "AI-powered recruitment assistant that generates and evaluates job-specific interview questions using advanced NLP algorithms.",
+      "Recruitment Bot is a smart, interactive web-based platform designed to simulate real-life job interviews and help users enhance their communication and technical skills. The bot conducts natural language conversations with users, evaluates their answers, and provides instant feedback on grammar, clarity, and confidence. Users can choose from different interview roles (e.g., frontend developer, data analyst, etc.) and receive both verbal and textual evaluations.",
     screenshots: [
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=500&fit=crop"
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230205/WhatsApp_Image_2025-07-11_at_16.06.37_9ee3ce24_o3cyz8.jpg",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230256/WhatsApp_Image_2025-07-11_at_16.07.27_f8e47fcb_twlkt3.jpg",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230297/WhatsApp_Image_2025-07-11_at_16.08.09_51ce3417_uwccoi.jpg",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230330/WhatsApp_Image_2025-07-11_at_16.08.41_4eee377d_nf4xvt.jpg",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230364/WhatsApp_Image_2025-07-11_at_16.09.16_8ec83c4e_xj4v9t.jpg"
     ],
-    tech: ["react", "nodejs", "redis", "socketio"],
+    tech: ["react", "nodejs", "mongodb", "express", "tailwind css", "Node.js"],
     github: "https://github.com/riyaz-shaik-16/recruitment-bot",
     demo: "https://recruitment-bot-alpha.vercel.app/",
   },
   {
-    title: "Taskify",
-    year: "2023",
-    status: "completed",
-    description: "Collaborative kanban board for team task management with real-time updates and drag-and-drop functionality.",
+    title: "Chat App",
+    year: "2025",
+    status: "Ongoing",
+    description: "Designed and developed a full-stack real-time chat app with Google Authentication, Redis Pub/Sub for event syncing, and a modern UI using ShadCN and Tailwind CSS CSS. Socket.IO powered the live messaging experience with online presence and typing indicators.",
     screenshots: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=500&fit=crop"
+      "https://plus.unsplash.com/premium_photo-1720032304972-1f1142e73253?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ],
-    tech: ["react", "express", "mongodb", "tailwind"],
-    github: "#",
-    demo: "#",
+    tech: ["react", "express", "mongodb", "Tailwind CSS","redis","Socket.IO"],
+    github: "https://github.com/riyaz-shaik-16/chat-app",
+    demo: null,
   },
   {
-    title: "E-Commerce Dashboard",
+    title: "Alumni Interaction Platform",
     year: "2024",
-    featured: true,
+    featured: false,
     status: "in-progress",
     description:
-      "Modern analytics dashboard for e-commerce businesses with real-time sales tracking and inventory management.",
+      "The Alumni Interaction Platform is a web-based system designed to connect current students with alumni for guidance, mentorship, and career support. The platform facilitates real-time conversations, scheduled sessions, and resource sharing to help students make informed academic and career decisions.",
     screenshots: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1590402494756-10c265b9d736?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop"
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231841/699db290-9e1f-4a51-8c2b-f78bc97ca0e9.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231877/0b714bc4-2618-43a3-87ab-09cd7aeb2d3f.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231900/c8d0c569-d2c7-4a91-b3a6-7f2ea3599048.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231921/73a57806-3d85-4d8f-a146-be031dbe564e.png"
     ],
-    tech: ["react", "nodejs", "postgresql", "tailwind"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Weather App",
-    year: "2023",
-    status: "completed",
-    description: "Beautiful weather application with location-based forecasts and interactive maps.",
-    screenshots: [
-      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=500&fit=crop"
-    ],
-    tech: ["react", "javascript", "css", "api"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Social Media Clone",
-    year: "2024",
-    status: "in-progress",
-    description:
-      "Full-stack social media platform with real-time messaging, post sharing, and user authentication.",
-    screenshots: [
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=500&fit=crop"
-    ],
-    tech: ["react", "nodejs", "mongodb", "socketio"],
-    github: "#",
-    demo: "#",
+    tech: ["react", "node.js", "mongodb","express", "Tailwind CSS"],
+    github: null,
+    demo: null,
   },
   {
     title: "Portfolio Website",
-    year: "2023",
+    year: "2025",
     featured: true,
     status: "completed",
     description: "Responsive portfolio website with smooth animations and modern design patterns.",
     screenshots: [
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop"
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752230940/715f05d1-ef74-4007-8732-a49160705bbb.png"
     ],
-    tech: ["react", "tailwind", "javascript"],
-    github: "#",
-    demo: "#",
+    tech: ["react", "Tailwind CSS", "javascript"],
+    github: "https://github.com/riyaz-shaik-16/portfolio",
+    demo: "https://riyazshaik.vercel.app/",
   },
 ];
 
