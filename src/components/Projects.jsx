@@ -67,7 +67,7 @@ const dummyProjects = [
 
 const Projects = () => {
   return (
-    <section className="relative w-full py-20 px-4 md:px-20 bg-background text-foreground">
+    <section className="relative flex flex-col justify-center items-center w-full py-20 px-4 md:px-20 bg-background text-foreground">
       <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Projects</h2>
       <div className="relative flex flex-col gap-32">
         {dummyProjects.map((project, i) => (
