@@ -116,8 +116,7 @@ const Hero = () => {
             variants={textVariants}
             className="text-base md:text-lg text-muted-foreground"
           >
-            I don't build for show. I build to breathe. Sometimes what I make
-            breaks. But I fix it. That's how I learn.
+            I build full-stack web experiences — where frontend animations meet backend logic.
           </motion.p>
 
           <motion.div
