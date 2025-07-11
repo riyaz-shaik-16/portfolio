@@ -5,7 +5,7 @@ import { useTheme } from "@/components/theme-provider";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-
+import Connect from "./components/Connect"
 const App = () => {
   const { theme } = useTheme();
   return (
@@ -21,6 +21,7 @@ const App = () => {
       <Hero/>
       <Skills/>
       <Projects/>
+      <Connect/>
     </div>
   );
 };

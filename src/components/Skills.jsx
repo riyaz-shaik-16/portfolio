@@ -13,7 +13,7 @@ const Skills = () => {
   const chunkedSkills = chunkArray(skills, 5);
 
   return (
-    <section className="flex flex-col gap-10 py-16 overflow-hidden relative">
+    <section className="flex w-full justify-center items-center flex-col gap-10 py-16 overflow-hidden relative">
       <style>
         {`
           @keyframes scroll {
@@ -41,7 +41,7 @@ const Skills = () => {
       </h2>
 
       {chunkedSkills.map((row, index) => (
-        <div key={`row-${index}`} className="w-full overflow-hidden">
+        <div key={`row-${index}`} className="max-w-6xl overflow-hidden">
           <div
             className={`flex w-fit gap-8 ${
               index % 2 === 0 ? "animate-scroll" : "animate-scroll-reverse"

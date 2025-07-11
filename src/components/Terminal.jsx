@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Terminal = () => {
+const Terminal = ({className}) => {
   const [lines, setLines] = useState([""]);
   const [currentStep, setCurrentStep] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -74,7 +74,7 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="w-full h-[350px] max-w-md font-mono text-sm bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 rounded-xl p-6 shadow-lg border border-zinc-200 dark:border-zinc-800">
+    <div className={`w-full h-[350px] mt-50 max-w-md font-mono text-sm bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 rounded-xl p-6 shadow-lg border border-zinc-200 dark:border-zinc-800`}>
       <div className="flex items-center gap-2 mb-4 pb-2 border-b border-zinc-200 dark:border-zinc-800">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>

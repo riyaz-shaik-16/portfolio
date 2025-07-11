@@ -1,222 +1,213 @@
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import { ModeToggle } from "./mode-toggle";
 import { useState, useEffect } from "react";
-import { 
-  User, 
-  Briefcase, 
-  Code, 
-  Mail, 
-  FileText, 
-  Download, 
-  Github, 
-  Linkedin, 
-  Twitter,
-  ExternalLink,
-  Star,
-  Eye,
-  Filter,
-  Calendar,
-  Palette,
-  Settings
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId);
-    }
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const iconHoverVariants = {
+    hover: {
+      scale: 1.2,
+      rotate: [0, -10, 10, -10, 0],
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+      },
+    },
+    tap: {
+      scale: 0.9,
+      transition: {
+        duration: 0.1,
+      },
+    },
+  };
+
+  const shimmerVariants = {
+    hover: {
+      x: ["0%", "100%"],
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
-    <div className={`w-full flex justify-center items-center p-4 fixed top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-white/80 dark:bg-black/80 backdrop-blur-lg shadow-lg border-b border-zinc-200/50 dark:border-zinc-800/50" 
-        : "bg-transparent"
-    }`}>
-      <Menubar className={`transition-all duration-300 border-2 ${
-        isScrolled 
-          ? "bg-white/90 dark:bg-black/90 backdrop-blur-lg shadow-xl border-zinc-200/70 dark:border-zinc-700/70" 
-          : "bg-white/95 dark:bg-black/95 backdrop-blur-sm border-zinc-200/50 dark:border-zinc-700/50"
-      } hover:shadow-2xl hover:border-zinc-300/70 dark:hover:border-zinc-600/70`}>
-        
-        {/* Navigation Menu */}
-        <MenubarMenu>
-          <MenubarTrigger className="flex items-center gap-2 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            <User className="w-4 h-4" />
-            Navigate
-          </MenubarTrigger>
-          <MenubarContent className="w-48">
-            <MenubarItem onClick={() => scrollToSection("home")} className="cursor-pointer">
-              <User className="w-4 h-4 mr-2" />
-              Home
-            </MenubarItem>
-            <MenubarItem onClick={() => scrollToSection("about")} className="cursor-pointer">
-              <FileText className="w-4 h-4 mr-2" />
-              About
-            </MenubarItem>
-            <MenubarItem onClick={() => scrollToSection("projects")} className="cursor-pointer">
-              <Briefcase className="w-4 h-4 mr-2" />
-              Projects
-            </MenubarItem>
-            <MenubarItem onClick={() => scrollToSection("skills")} className="cursor-pointer">
-              <Code className="w-4 h-4 mr-2" />
-              Skills
-            </MenubarItem>
-            <MenubarItem onClick={() => scrollToSection("contact")} className="cursor-pointer">
-              <Mail className="w-4 h-4 mr-2" />
-              Contact
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`w-full flex justify-center items-center p-4 fixed top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-lg shadow-lg border-b border-zinc-200/50 dark:border-zinc-800/50"
+          : "bg-transparent"
+      }`}
+    >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        whileHover={{
+          scale: 1.02,
+          transition: { duration: 0.3 },
+        }}
+      >
+        <Menubar
+          className={`transition-all p-8 duration-300 border-2 rounded-2xl ${
+            isScrolled
+              ? "bg-white/90 dark:bg-black/90 backdrop-blur-lg shadow-xl border-zinc-200/70 dark:border-zinc-700/70"
+              : "bg-white/95 dark:bg-black/95 backdrop-blur-sm border-zinc-200/50 dark:border-zinc-700/50"
+          } hover:shadow-2xl hover:border-zinc-300/70 dark:hover:border-zinc-600/70`}
+        >
 
-        {/* Projects Menu */}
-        <MenubarMenu>
-          <MenubarTrigger className="flex items-center gap-2 text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-            <Briefcase className="w-4 h-4" />
-            Projects
-          </MenubarTrigger>
-          <MenubarContent className="w-56">
-            <MenubarSub>
-              <MenubarSubTrigger>
-                <Filter className="w-4 h-4 mr-2" />
-                Filter by Tech
-              </MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>React Projects</MenubarItem>
-                <MenubarItem>Vue Projects</MenubarItem>
-                <MenubarItem>Node.js Projects</MenubarItem>
-                <MenubarItem>Python Projects</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>All Projects</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarCheckboxItem>
-              <Star className="w-4 h-4 mr-2" />
-              Featured Only
-            </MenubarCheckboxItem>
-            <MenubarCheckboxItem>
-              <Eye className="w-4 h-4 mr-2" />
-              Show Demos
-            </MenubarCheckboxItem>
-            <MenubarSeparator />
-            <MenubarItem>
-              <Calendar className="w-4 h-4 mr-2" />
-              Sort by Date
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+          <MenubarMenu>
+            <motion.div variants={itemVariants}>
+              <MenubarTrigger className="flex items-center gap-2 text-sm font-medium transition-colors relative overflow-hidden rounded-lg px-3 py-2">
+                <motion.div
+                  variants={iconHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="relative"
+                >
+                  <Github
+                    className="w-7 h-7 cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    onClick={() =>
+                      window.open("https://github.com/riyaz-shaik-16", "_blank")
+                    }
+                  />
 
-        {/* Resources Menu */}
-        <MenubarMenu>
-          <MenubarTrigger className="flex items-center gap-2 text-sm font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors">
-            <FileText className="w-4 h-4" />
-            Resources
-          </MenubarTrigger>
-          <MenubarContent className="w-52">
-            <MenubarItem>
-              <Download className="w-4 h-4 mr-2" />
-              Download Resume
-              <MenubarShortcut>⌘D</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              <FileText className="w-4 h-4 mr-2" />
-              View CV Online
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Social Links
-              </MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub Profile
-                </MenubarItem>
-                <MenubarItem>
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </MenubarItem>
-                <MenubarItem>
-                  <Twitter className="w-4 h-4 mr-2" />
-                  Twitter
-                </MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem>
-              <Mail className="w-4 h-4 mr-2" />
-              Send Email
-              <MenubarShortcut>⌘M</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+                  <motion.div
+                    className="absolute inset-0 bg-blue-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1.5, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+                <motion.div
+                  variants={shimmerVariants}
+                  whileHover="hover"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent -translate-x-full"
+                />
+              </MenubarTrigger>
+            </motion.div>
+          </MenubarMenu>
 
-        {/* Settings Menu */}
-        <MenubarMenu>
-          <MenubarTrigger className="flex items-center gap-2 text-sm font-medium hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-            <Settings className="w-4 h-4" />
-            Settings
-          </MenubarTrigger>
-          <MenubarContent className="w-48">
-            <MenubarCheckboxItem checked>
-              <Eye className="w-4 h-4 mr-2" />
-              Animations
-            </MenubarCheckboxItem>
-            <MenubarCheckboxItem>
-              <Palette className="w-4 h-4 mr-2" />
-              Reduced Motion
-            </MenubarCheckboxItem>
-            <MenubarSeparator />
-            <MenubarRadioGroup value="auto">
-              <MenubarRadioItem value="light">Light Theme</MenubarRadioItem>
-              <MenubarRadioItem value="dark">Dark Theme</MenubarRadioItem>
-              <MenubarRadioItem value="auto">Auto Theme</MenubarRadioItem>
-            </MenubarRadioGroup>
-            <MenubarSeparator />
-            <MenubarItem inset>
-              Reset Preferences
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+          <MenubarMenu>
+            <motion.div variants={itemVariants}>
+              <MenubarTrigger className="flex items-center gap-2 text-sm font-medium transition-colors relative overflow-hidden rounded-lg px-3 py-2">
+                <motion.div
+                  variants={iconHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="relative"
+                >
+                  <Linkedin className="w-7 h-7 cursor-pointer text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
+                  onClick={() =>
+                      window.open("https://linkedin.com/in/shaikriyaz668", "_blank")
+                    }
+                   />
+                  <motion.div
+                    className="absolute inset-0 bg-green-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1.5, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+                <motion.div
+                  variants={shimmerVariants}
+                  whileHover="hover"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/30 to-transparent -translate-x-full"
+                />
+              </MenubarTrigger>
+            </motion.div>
+          </MenubarMenu>
 
-        {/* Theme Toggle */}
-        <MenubarMenu>
-          <div className="flex items-center px-3">
-            <ModeToggle />
-          </div>
-        </MenubarMenu>
-      </Menubar>
-    </div>
+          {/* Email Menu */}
+          <MenubarMenu>
+            <motion.div variants={itemVariants}>
+              <MenubarTrigger className="flex items-center gap-2 text-sm font-medium transition-colors relative overflow-hidden rounded-lg px-3 py-2">
+                <motion.div
+                  variants={iconHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="relative"
+                >
+                  <a href="mailto:sr308379@gmail.com" className="block">
+                    <Mail className="w-7 h-7 cursor-pointer text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400" />
+                  </a>
+                  <motion.div
+                    className="absolute inset-0 bg-orange-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1.5, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+                <motion.div
+                  variants={shimmerVariants}
+                  whileHover="hover"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/30 to-transparent -translate-x-full"
+                />
+              </MenubarTrigger>
+            </motion.div>
+          </MenubarMenu>
+
+          {/* Mode Toggle Menu */}
+          <MenubarMenu>
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center px-3 py-2 rounded-lg relative overflow-hidden"
+            >
+              <ModeToggle />
+              <motion.div
+                variants={shimmerVariants}
+                whileHover="hover"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent -translate-x-full"
+              />
+            </motion.div>
+          </MenubarMenu>
+        </Menubar>
+      </motion.div>
+    </motion.div>
   );
 };
 
