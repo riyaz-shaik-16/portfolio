@@ -72,7 +72,7 @@ const Projects = () => {
       <div className="relative flex flex-col gap-32">
         {dummyProjects.map((project, i) => (
           <div key={i} className="flex items-start gap-8 relative">
-            <div className="sticky top-20 w-20 text-right text-muted-foreground text-sm font-mono">
+            <div className="sticky hidden md:block top-20 w-20 text-right text-muted-foreground text-sm font-mono">
               {project.year}
             </div>
             <ProjectCard project={project} skillsMap={skills} />
