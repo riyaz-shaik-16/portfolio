@@ -79,7 +79,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center sm:flex-row">
+    <div className="flex md:mb-12 flex-col justify-center items-center sm:flex-row">
       <motion.section
         variants={containerVariants}
         initial="hidden"
