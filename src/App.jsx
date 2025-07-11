@@ -1,14 +1,31 @@
 import { Button } from "./components/ui/button";
-import { Toaster, toast } from "sonner";
+import { Toaster } from "sonner";
+import Navbar from "./components/Navbar";
+import { useTheme } from "@/components/theme-provider";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 const App = () => {
+  const { theme } = useTheme();
   return (
-    <>
-      <Toaster />
-      <Button onClick={() => toast("Clicked")}>Click</Button>
-      hi
-    </>
+    <div >
+      <Toaster
+      richColors
+      theme={theme === "system" ? "auto" : theme}
+      position="top-right"
+      closeButton
+      className="border-red-900"
+    />
+      <Navbar />
+      <Hero/>
+      <Skills/>
+      <Projects/>
+    </div>
   );
 };
 
 export default App;
+
+
+
