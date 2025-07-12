@@ -24,7 +24,7 @@ const dummyProjects = [
   {
     title: "Chat App",
     year: "2025",
-    status: "Completed",
+    status: "completed",
     description: "Designed and developed a full-stack real-time chat app with Google Authentication, Redis Pub/Sub for event syncing, and a modern UI using ShadCN and Tailwind CSS CSS. Socket.IO powered the live messaging experience with online presence and typing indicators.",
     screenshots: [
       "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307579/d631ccd3-4b08-4d85-b67c-09b5be6a9d7e.png",
