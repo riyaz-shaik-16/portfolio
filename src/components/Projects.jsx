@@ -24,10 +24,12 @@ const dummyProjects = [
   {
     title: "Chat App",
     year: "2025",
-    status: "Ongoing",
+    status: "Completed",
     description: "Designed and developed a full-stack real-time chat app with Google Authentication, Redis Pub/Sub for event syncing, and a modern UI using ShadCN and Tailwind CSS CSS. Socket.IO powered the live messaging experience with online presence and typing indicators.",
     screenshots: [
-      "https://plus.unsplash.com/premium_photo-1720032304972-1f1142e73253?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307579/d631ccd3-4b08-4d85-b67c-09b5be6a9d7e.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307609/c42145e3-e6b7-47f4-87fa-13dc6dc6f9b6.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307624/d3f35d8a-023d-476c-8bd3-2573204da885.png"
     ],
     tech: ["react", "express", "mongodb", "Tailwind CSS","redis","Socket.IO"],
     github: "https://github.com/riyaz-shaik-16/chat-app",
