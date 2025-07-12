@@ -46,8 +46,8 @@ const dummyProjects = [
       "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231900/c8d0c569-d2c7-4a91-b3a6-7f2ea3599048.png",
       "https://res.cloudinary.com/dxe17fztz/image/upload/v1752231921/73a57806-3d85-4d8f-a146-be031dbe564e.png"
     ],
-    tech: ["react", "node.js", "mongodb","express", "Tailwind CSS"],
-    github: null,
+    tech: ["react", "node.js", "mongodb","express", "Tailwind CSS","shadcn"],
+    github: "https://github.com/riyaz-shaik-16/Alumni-interaction-platform",
     demo: null,
   },
   {
