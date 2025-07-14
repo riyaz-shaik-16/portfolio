@@ -6,6 +6,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
+import axios from "axios";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -14,6 +16,8 @@ const formSchema = z.object({
 });
 
 export default function ContactSection() {
+
+  const [sending,setSeding] = useState(false);
   const {
     register,
     handleSubmit,
@@ -23,23 +27,27 @@ export default function ContactSection() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (values) => {
     try {
-      await new Promise((res) => setTimeout(res, 1000)); // simulate delay
-      console.log("Form submitted:", data);
-
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out — I'll get back to you soon.",
-      });
-
+      setSeding(prev => !prev);
+      const { data } = await axios.post(
+        "https://send-mail-kkx0.onrender.com/api/send-mail",
+        values
+      );
+      if (data.success) {
+        toast("Message Sent!", {
+          description: "Thanks for reaching out — I'll get back to you soon.",
+        });
+      }
       reset();
     } catch (error) {
-      toast({
-        title: "Something went wrong!",
+      // console.log("Error: ", error);
+      toast("Something went wrong!", {
         description: "Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setSeding(prev => !prev);
     }
   };
 
@@ -56,7 +64,10 @@ export default function ContactSection() {
             I’d love to hear from you. Drop a message and I’ll get back to you
             soon.
           </p>
-          <span className="flex gap-2 text-muted-foreground items-center"> <Mail className="w-7 h-7"/> sr308379@gmail.com</span>
+          <span className="flex gap-2 text-muted-foreground items-center">
+            {" "}
+            <Mail className="w-7 h-7" /> sr308379@gmail.com
+          </span>
         </div>
 
         {/* Right: Form */}
@@ -98,14 +109,9 @@ export default function ContactSection() {
             )}
           </div>
 
-          <Button
-            type="submit"
-            className="w-full md:w-auto cursor-not-allowed"
-            disabled={true}
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
+          <Button type="submit" className="w-full md:w-auto" disabled={false}>
+            {sending ? "Sending..." : "Send Message"}
           </Button>
-          <p className="italic text-muted-foreground">This doesnt work | Will work on it later</p>
         </form>
       </div>
     </section>
