@@ -1,12 +1,33 @@
-# React + Vite
+# Riyaz Shaik's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio!  
+Check it out live: [riyazshaik.vercel.app](https://riyazshaik.vercel.app)
 
-Currently, two official plugins are available:
+## 🚀 About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm Riyaz Shaik, a passionate developer focused on building impactful web applications and digital experiences.
 
-## Expanding the ESLint configuration
+## 🌐 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Visit: [riyazshaik.vercel.app](https://riyazshaik.vercel.app)
+
+## 🛠️ Technologies & Tools
+
+
+- JavaScript (ES6+)
+- React (with shadcn/ui)
+- Tailwind CSS
+- Node.js
+- Git & GitHub
+
+## 📂 Projects
+
+Explore my featured projects and case studies on the [live site](https://riyazshaik.vercel.app).
+
+## 📫 Contact
+
+Feel free to connect with me via [LinkedIn](https://www.linkedin.com/in/shaikriyaz668/) or email at sr308379@gmail.com.
+
+---
+
+Thank you for visiting my portfolio!
