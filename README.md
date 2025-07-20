@@ -1,4 +1,4 @@
-# Riyaz Shaik's Portfolio
+# Riyaz Shaik
 
 Welcome to my portfolio!  
 Check it out live: [riyazshaik.vercel.app](https://riyazshaik.vercel.app)
