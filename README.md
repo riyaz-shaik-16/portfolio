@@ -53,10 +53,9 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPOSITORY].git
-    cd [YOUR_REPOSITORY]
+    git clone https://github.com/riyaz-shaik-16/portfolio.git
+    cd portfolio
     ```
-    *Note: Replace `[YOUR_USERNAME]/[YOUR_REPOSITORY]` with the actual path to this repository.*
 
 2.  **Install dependencies:**
     ```bash
