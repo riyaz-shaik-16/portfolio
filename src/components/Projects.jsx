@@ -6,7 +6,7 @@ const dummyProjects = [
   {
     title: "Recruitment Bot",
     year: "2025",
-    featured: false,
+    featured: true,
     status: "completed",
     description:
       "Recruitment Bot is a smart, interactive web-based platform designed to simulate real-life job interviews and help users enhance their communication and technical skills. The bot conducts natural language conversations with users, evaluates their answers, and provides instant feedback on grammar, clarity, and confidence. Users can choose from different interview roles (e.g., frontend developer, data analyst, etc.) and receive both verbal and textual evaluations.",
@@ -24,22 +24,22 @@ const dummyProjects = [
   {
     title: "Chat App",
     year: "2025",
+    featured:true,
     status: "completed",
     description: "Designed and developed a full-stack real-time chat app with Google Authentication, Redis Pub/Sub for event syncing, and a modern UI using ShadCN and Tailwind CSS CSS. Socket.IO powered the live messaging experience with online presence and typing indicators.",
     screenshots: [
-      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307579/d631ccd3-4b08-4d85-b67c-09b5be6a9d7e.png",
-      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307609/c42145e3-e6b7-47f4-87fa-13dc6dc6f9b6.png",
-      "https://res.cloudinary.com/dxe17fztz/image/upload/v1752307624/d3f35d8a-023d-476c-8bd3-2573204da885.png"
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1753535728/Screenshot_2025-07-26_184408_j0zqw0.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1753609781/Screenshot_2025-07-27_145610_vme0yx.png",
+      "https://res.cloudinary.com/dxe17fztz/image/upload/v1753609865/Screenshot_2025-07-27_151821_zphg9v.png"
     ],
     tech: ["react", "express", "mongodb", "Tailwind CSS","redis","Socket.IO"],
     github: "https://github.com/riyaz-shaik-16/chat-app",
-    demo: null,
+    demo: "https://chat-app-16.vercel.app",
   },
   {
     title: "Alumni Interaction Platform",
     year: "2024",
-    featured: false,
-    status: "in-progress",
+    status: "completed",
     description:
       "The Alumni Interaction Platform is a web-based system designed to connect current students with alumni for guidance, mentorship, and career support. The platform facilitates real-time conversations, scheduled sessions, and resource sharing to help students make informed academic and career decisions.",
     screenshots: [
