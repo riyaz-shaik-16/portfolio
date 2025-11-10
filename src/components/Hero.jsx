@@ -138,7 +138,8 @@ const Hero = () => {
               <div
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/uc?export=download&id=1jtABdr6F1m2v_vsL_raDwWA_ZAb9rzyP",
+                    `https://drive.google.com/uc?export=download&id=11rF63OdxJMU6g1hWrVB4_mld5Wo8xsVX
+`,
                     "_blank"
                   )
                 }
