@@ -124,7 +124,6 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 mt-4 justify-center md:justify-start"
           >
             <motion.a
-              href="#projects"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
