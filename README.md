@@ -10,7 +10,7 @@ Welcome to the repository for my personal portfolio website! 👋
 
 This project showcases my skills, featured projects, and provides a way to get in touch with me.
 
-**Check it out live: [riyazshaik.vercel.app](https://riyazshaik.vercel.app)**
+**Check it out live: [www.riyazdev.site](https://www.riyazdev.site)**
 
 ---
 
