@@ -146,7 +146,7 @@ const Hero = () => {
                 className="relative z-10 px-4 py-3 flex justify-center items-center gap-2 rounded-md text-white transition-all duration-200"
               >
                 <Download className="w-6 h-6" />
-                <span className="text-lg font-medium">Download Resume</span>
+                <button className="text-lg font-medium">Download Resume</button>
               </div>
             </motion.a>
           </motion.div>
