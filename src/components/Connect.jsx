@@ -109,7 +109,7 @@ export default function ContactSection() {
             )}
           </div>
 
-          <Button type="submit" className="w-full md:w-auto" disabled={false}>
+          <Button type="button" className="w-full md:w-auto cursor-not-allowed text-gray-300" disabled={false}>
             {sending ? "Sending..." : "Send Message"}
           </Button>
         </form>
