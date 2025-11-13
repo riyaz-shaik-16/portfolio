@@ -30,8 +30,9 @@ export default function ContactSection() {
   const onSubmit = async (values) => {
     try {
       setSeding(prev => !prev);
+      const url = import.meta.env.VITE_BACKEND_URL;
       const { data } = await axios.post(
-        "https://send-mail-kkx0.onrender.com/api/send-mail",
+        url,
         values
       );
       if (data.success) {
@@ -117,3 +118,4 @@ export default function ContactSection() {
     </section>
   );
 }
+
