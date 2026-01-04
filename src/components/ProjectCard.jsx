@@ -160,7 +160,10 @@ const ProjectCard = ({ project, skillsMap }) => {
       viewport={{ once: true, amount: 0.2 }}
       className="sticky top-20 w-full max-w-7xl overflow-x-hidden px-4 sm:px-6"
     >
-      <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3, ease: "easeInOut" }}>
+      <motion.div
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
         <Card className="group relative overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:shadow-2xl transition-all duration-300 hover:border-zinc-300 dark:hover:border-zinc-700">
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50/30 dark:to-blue-950/20"
@@ -210,7 +213,10 @@ const ProjectCard = ({ project, skillsMap }) => {
                   )}
 
                   {status && (
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <Badge
                         variant={
                           status === "completed"
@@ -239,7 +245,10 @@ const ProjectCard = ({ project, skillsMap }) => {
                         key={i}
                         className="flex justify-center px-2 sm:px-0 w-full max-w-full"
                       >
-                        <motion.div className="relative w-full max-w-full sm:max-w-2xl" variants={imageVariants}>
+                        <motion.div
+                          className="relative w-full max-w-full sm:max-w-2xl"
+                          variants={imageVariants}
+                        >
                           {!imageLoaded[i] && (
                             <div className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse" />
                           )}
@@ -279,7 +288,10 @@ const ProjectCard = ({ project, skillsMap }) => {
             )}
 
             <motion.div variants={contentVariants} className="space-y-3">
-              <motion.p variants={contentVariants} className="text-muted-foreground leading-relaxed">
+              <motion.p
+                variants={contentVariants}
+                className="text-muted-foreground leading-relaxed"
+              >
                 {description}
               </motion.p>
             </motion.div>
@@ -292,9 +304,14 @@ const ProjectCard = ({ project, skillsMap }) => {
                 >
                   Built with
                 </motion.h4>
-                <motion.div variants={techStackVariants} className="flex flex-wrap gap-3">
+                <motion.div
+                  variants={techStackVariants}
+                  className="flex flex-wrap gap-3"
+                >
                   {tech.map((t) => {
-                    const found = skillsMap.find((s) => s.name.toLowerCase() === t.toLowerCase());
+                    const found = skillsMap.find(
+                      (s) => s.name.toLowerCase() === t.toLowerCase()
+                    );
                     return found ? (
                       <motion.div
                         key={t}
@@ -303,7 +320,11 @@ const ProjectCard = ({ project, skillsMap }) => {
                         whileTap={{ scale: 0.9 }}
                         className="flex items-center gap-2 bg-zinc-50 dark:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 px-3 py-2 rounded-full text-sm font-medium text-zinc-700 dark:text-zinc-300 transition-colors duration-200 border border-zinc-200 dark:border-zinc-700 cursor-default"
                       >
-                        <img src={found.image} alt={found.name} className="w-4 h-4" />
+                        <img
+                          src={found.image}
+                          alt={found.name}
+                          className="w-4 h-4"
+                        />
                         <span>{found.name}</span>
                       </motion.div>
                     ) : null;
@@ -317,7 +338,12 @@ const ProjectCard = ({ project, skillsMap }) => {
               className="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800 flex-col md:flex-row"
             >
               {github && (
-                <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap" className="flex-1">
+                <motion.div
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="flex-1"
+                >
                   <Button
                     asChild
                     variant="outline"
@@ -329,7 +355,10 @@ const ProjectCard = ({ project, skillsMap }) => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2"
                     >
-                      <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
+                      <motion.div
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         <Github className="w-4 h-4" />
                       </motion.div>
                       Source Code
@@ -337,7 +366,7 @@ const ProjectCard = ({ project, skillsMap }) => {
                   </Button>
                 </motion.div>
               )}
-              {demo && (
+              {/* {demo && (
                 <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap" className="flex-1">
                   <Button
                     asChild
@@ -350,6 +379,30 @@ const ProjectCard = ({ project, skillsMap }) => {
                       className="flex items-center justify-center gap-2"
                     >
                       <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.3 }}>
+                        <ExternalLink className="w-4 h-4" />
+                      </motion.div>
+                      Live Demo
+                    </a>
+                  </Button>
+                </motion.div>
+              )} */}
+              {demo && (
+                <motion.div variants={buttonVariants} className="flex-1 cursor-not-allowed">
+                  <Button
+                    asChild
+                    className="w-full
+                 bg-gradient-to-r from-gray-400 to-gray-500
+                 opacity-60
+                 cursor-not-allowed
+                 hover:from-gray-400 hover:to-gray-500"
+                  >
+                    <a
+                      href={demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 pointer-events-none"
+                    >
+                      <motion.div whileHover={{}} transition={{ duration: 0 }}>
                         <ExternalLink className="w-4 h-4" />
                       </motion.div>
                       Live Demo

@@ -63,7 +63,7 @@ const dummyProjects = [
     ],
     tech: ["react", "Tailwind CSS", "javascript"],
     github: "https://github.com/riyaz-shaik-16/portfolio",
-    demo: "https://riyazshaik.vercel.app/",
+    demo: "",
   },
 ];
 

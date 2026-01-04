@@ -137,15 +137,15 @@ const Hero = () => {
               <div
                 onClick={() =>
                   window.open(
-                    `https://drive.google.com/uc?export=download&id=11rF63OdxJMU6g1hWrVB4_mld5Wo8xsVX
+                    `https://drive.google.com/uc?export=download&id=1IjDnIIwZ-RFDwmTMnIrXV0zBM5oak1Lz
 `,
                     "_blank"
                   )
                 }
-                className="relative z-10 px-4 py-3 flex justify-center items-center gap-2 rounded-md text-white transition-all duration-200"
+                className="relative cursor-pointer z-10 px-4 py-3 flex justify-center items-center gap-2 rounded-md text-white transition-all duration-200"
               >
-                <Download className="w-6 h-6" />
-                <button className="text-lg font-medium">Download Resume</button>
+                <Download className="w-6 h-6 cursor-pointer" />
+                <button className="text-lg font-medium cursor-pointer">Download Resume</button>
               </div>
             </motion.a>
           </motion.div>
